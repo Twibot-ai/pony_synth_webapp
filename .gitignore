@@ -1,0 +1,63 @@
+### Config stuff
+/config/adwords
+/config/initializers/mongodb_logger.rb
+/config/database.yml
+/config/master.key
+/config/nginx/camp_sites
+/config/pay_online.yml
+/config/payture.yml
+/config/orange_data_client_cert.crt
+/config/orange_data_client_key.key
+/config/orange_data_sign_key.key
+
+### IDE stuff
+/.idea
+/.vscode
+
+### OS stuff
+/._*
+/.DS_Store
+/.DS_Store?
+/.Spotlight-V100
+/.Trashes
+/ehthumbs.db
+/Thumbs.db
+
+### Rails stuff
+/coverage
+/doc
+/log
+/public/assets/source_maps
+/public/robots
+/public/sitemaps
+/public/uploads
+/spec/examples\.txt
+/storage/*
+/tmp
+/vendor/bundle
+/.bundle
+/.yardoc
+/pass.yml
+
+### Sphinx stuff
+/config/development.sphinx.conf
+/db/sphinx
+
+### SQLite stuff
+/db/*.sqlite3
+/*.sql
+
+### Webpack
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+
+### Dump stuff
+dump\.rdb
+
+###Gemset
+.ruby-gemset
+
