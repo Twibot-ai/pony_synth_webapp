@@ -1,0 +1,11 @@
+:concurrency: 1
+
+production:
+  :concurrency: 1
+
+:queues:
+  - critical
+  - default
+  - low
+
+:max_retries: 2

@@ -1,0 +1,2 @@
+module VoiceApiHelper
+end
