@@ -28,13 +28,13 @@ class PhraseSynthesesJob < ApplicationJob
         order_state: :generation_started
     )
 
-    script_path = File.join(Rails.root, 'lib', 'python', 'scripts', 'synthesis.py')
+    script_path = File.join(Rails.root, 'lib', 'python', 'scripts', 'synthesis')
     model_path = File.join(Rails.root, 'lib', 'python', 'model', 'checkpoint_step000200000_22hz_16bit.pth')
     config_path = File.join(Rails.root, 'lib', 'python', 'model', '20180505_deepvoice3_ljspeech.json')
     file_name = SecureRandom.urlsafe_base64(5) + '.wav'
     file_path = File.join(Rails.root, 'tmp', file_name)
 
-    command = "python #{script_path} #{model_path} #{config_path} #{phrase} #{file_path}".shellescape
+    command = "#{script_path} #{model_path} #{config_path} #{phrase} #{file_path}".shellescape
     %x{ #{command} }
     order = Order.create(phrase: phrase, ws_token: token)
     order.synthesized_quote.attach(
