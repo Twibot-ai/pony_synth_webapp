@@ -1,0 +1,25 @@
+default: &default
+  adapter: postgresql
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  timeout: 5000
+  username: dmitry
+  password: 1234567890
+  encoding: unicode
+  database: pony_db_dev
+
+
+production:
+  <<: *default
+  database: app_production
+  username: app
+  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
+
+test:
+  <<: *default
+  database: db_test
+
+
+
