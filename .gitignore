@@ -53,3 +53,6 @@ dump\.rdb
 ###Gemset
 .ruby-gemset
 
+###Scripts
+/lib/python/scripts/synthesis
+
