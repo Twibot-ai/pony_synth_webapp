@@ -8,3 +8,5 @@ Dockerfile
 docker-compose.yml
 docker-compose.override.yml
 README.rdoc
+lib/python/model/checkpoint_step000200000_22hz_16bit.pth
+lib/python/scripts/synthesis
