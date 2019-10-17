@@ -1,14 +1,12 @@
 import consumer from './consumer'
 
 export default (received_callback) => {
-  return consumer.subscriptions.create({
-    channel: 'OrderChannel'
-  }, {
-    received: function (data) {
+  return consumer.subscriptions.create({ channel: 'OrderChannel' }, {
+    received (data) {
       received_callback(data);
     },
 
-    sendOrder: function (inputData) {
+    sendOrder (inputData) {
       this.perform('order_phrase', inputData)
     }
   });

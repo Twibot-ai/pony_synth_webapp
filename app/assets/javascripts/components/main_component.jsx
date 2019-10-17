@@ -6,7 +6,7 @@ import SendableInput from "./sendable_input";
 import CssBaseline from "@material-ui/core/es/CssBaseline/CssBaseline";
 import AppBar from "@material-ui/core/es/AppBar/AppBar";
 import Toolbar from "@material-ui/core/es/Toolbar/Toolbar";
-import OrderChannel from "../../../javascript/channels/order_channel";
+import OrderChannel from "channels/order_channel";
 import LoaderComponent from "./loader_component";
 import Typography from '@material-ui/core/es/Typography/Typography'
 // import AudioComponent from "./audio_component";

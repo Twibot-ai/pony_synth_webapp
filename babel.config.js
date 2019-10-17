@@ -74,12 +74,13 @@ module.exports = function(api) {
           async: false
         }
       ],
-      isProductionEnv && [
-        require('babel-plugin-transform-react-remove-prop-types').default,
-        {
-          removeImport: true
-        }
-      ]
+      // due actioncable.js problem: https://github.com/rails/rails/issues/35501#issuecomment-530703124
+      // isProductionEnv && [
+      //   require('babel-plugin-transform-react-remove-prop-types').default,
+      //   {
+      //     removeImport: true
+      //   }
+      // ]
     ].filter(Boolean)
   }
 }
