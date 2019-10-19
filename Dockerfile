@@ -40,7 +40,7 @@ RUN wget -P ./lib/python/model/ \
 COPY . ./
 
 # Precompile assets
-RUN bin/rails assets:precompile \
+RUN SECRET_KEY_BASE=$(rake secret) bundle exec bin/rails assets:precompile \
     && rm -rf /${APP_DIR}/tmp/cache/assets/
 
 #RUN rails db:migrate
