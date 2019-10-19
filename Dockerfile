@@ -30,12 +30,15 @@ RUN bundle install \
 ADD package*.json yarn.* ./
 RUN yarn install --no-progress --frozen-lockfile --no-cache --production
 
-RUN wget -P ./lib/python/model/ \
-         -O model_twilight.pth \
+RUN wget -O model_twilight.pth \
          https://github.com/Twibot-ai/pony_synth_script/releases/download/1.0/checkpoint_step200k_22hz_16bit_twilight.pth \
-    && wget -P ./lib/python/scripts/ \
-            -O synthesis \
-            https://github.com/Twibot-ai/pony_synth_script/releases/download/1.0/linux_executable_lighter.lighter
+    && mkdir --parents ./lib/python/model/ \
+    && mv model_twilight.pth ./lib/python/model/ \
+    && wget -O synthesis \
+            https://github.com/Twibot-ai/pony_synth_script/releases/download/1.0/linux_executable_lighter.lighter \
+    && mkdir --parents ./lib/python/scripts/ \
+    && mv synthesis ./lib/python/scripts/
+
 
 COPY . ./
 

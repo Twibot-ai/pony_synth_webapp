@@ -29,7 +29,7 @@ class PhraseSynthesesJob < ApplicationJob
     )
 
     script_path = File.join(Rails.root, 'lib', 'python', 'scripts', 'synthesis')
-    model_path = File.join(Rails.root, 'lib', 'python', 'model', 'checkpoint_step000200000_22hz_16bit.pth')
+    model_path = File.join(Rails.root, 'lib', 'python', 'model', 'model_twilight.pth')
     config_path = File.join(Rails.root, 'lib', 'python', 'model', '20180505_deepvoice3_ljspeech.json')
     file_name = SecureRandom.urlsafe_base64(5) + '.wav'
     file_path = File.join(Rails.root, 'tmp', file_name)
