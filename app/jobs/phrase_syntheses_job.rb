@@ -34,7 +34,7 @@ class PhraseSynthesesJob < ApplicationJob
     file_name = SecureRandom.urlsafe_base64(5) + '.wav'
     file_path = File.join(Rails.root, 'tmp', file_name)
 
-    command = "#{script_path} #{model_path} #{config_path} #{phrase} #{file_path}".shellescape
+    command = "#{script_path} #{model_path} #{config_path} #{phrase.shellescape} #{file_path}"
     %x{ #{command} }
     order = Order.create(phrase: phrase, ws_token: token)
     order.synthesized_quote.attach(
